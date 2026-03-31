@@ -15,7 +15,7 @@ print(data[0]) """
 
 #For Leo/, help me come up with a clever final question, considering maybe showing all moves a pokemon has avaiable based on type
 
-sushi_orders = [
+""" sushi_orders = [
     {"name": "California Roll", "price": 8},
     {"name": "Spicy Tuna Roll", "price": 10},
     {"name": "Salmon Nigiri", "price": 6},
@@ -38,6 +38,28 @@ def receipt(orders):
                 "price": order["price"],
                 "quantity": 1
             }
-    print(receipt)
+    for order, value in receipt.items():
+        price = value["price"] * value["quantity"]
+        print(order, value["quantity"], price)
 
-print(receipt(sushi_orders))
+print(receipt(sushi_orders)) """
+
+
+
+
+
+wards = {
+    "Cardiology":  ["Alice", "Bob", "Carol"],
+    "Neurology":   ["Diana", "Eve"],
+    "Orthopedics": ["Frank", "Grace", "Hank"],
+    "Oncology":    ["Ivy", "Bob"]
+}
+
+staff = {}
+for ward, staff in wards.items():
+    for member in staff:
+        if member[staff] in ward:
+        else:
+
+
+print(ward, staff)
