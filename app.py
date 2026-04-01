@@ -56,10 +56,11 @@ wards = {
 }
 
 staff = {}
-for ward, staff in wards.items():
-    for member in staff:
-        if member[staff] in ward:
-        else:
+for dept, docs in wards.items():
+    print(dept, docs)
+    for doc in docs:
+        if doc not in staff:
+            staff[doc] = {}
+        staff[doc].append(dept)
 
-
-print(ward, staff)
+print(staff['Bob'])
