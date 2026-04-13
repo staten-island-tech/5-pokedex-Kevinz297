@@ -5,6 +5,7 @@ pokedex = open("./pokedex.json", encoding="utf8")
 data = json.load(pokedex)
 print(data[0]) """
 
+
 # Create a function that will take the data from the JSON file and you will iterate through the list of pokemon and print each pokemons name.
 
 # Add a language choice feature and print the pokemons name based on the user input
@@ -47,7 +48,7 @@ print(receipt(sushi_orders)) """
 
 
 
-
+""" 
 wards = {
     "Cardiology":  ["Alice", "Bob", "Carol"],
     "Neurology":   ["Diana", "Eve"],
@@ -63,4 +64,4 @@ for dept, docs in wards.items():
             staff[doc] = {}
         staff[doc].append(dept)
 
-print(staff['Bob'])
+print(staff['Bob']) """
