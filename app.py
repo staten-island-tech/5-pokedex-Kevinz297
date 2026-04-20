@@ -8,7 +8,6 @@ with open('pokedex.json', encoding='utf-8') as pokedex_file:
 
 def print_pokemon_names_by_language(pokedex_data):
     lang = input("Choose language (en, fr, zh, ja): ").lower()
-
     for pokemon in pokedex_data:
         if lang == 'fr':
             print(pokemon['name']['french'])
@@ -61,7 +60,7 @@ print(receipt(sushi_orders)) """
 
 
 
-""" 
+""" """ """ 
 wards = {
     "Cardiology":  ["Alice", "Bob", "Carol"],
     "Neurology":   ["Diana", "Eve"],
@@ -74,7 +73,6 @@ for dept, docs in wards.items():
     print(dept, docs)
     for doc in docs:
         if doc not in staff:
-            staff[doc] = {}
-        staff[doc].append(dept)
-
-print(staff['Bob']) """
+            staff[doc] = []
+            staff[doc].append(dept)
+    print(staff['Bob']) """
