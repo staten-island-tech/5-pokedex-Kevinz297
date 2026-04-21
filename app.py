@@ -1,7 +1,7 @@
 
 ## Open the JSON file of pokemon data
 ## create variable "data" that represents the enitre pokedex list
-import json
+from import json import JSON
 
 with open('pokedex.json', encoding='utf-8') as pokedex_file:
     data = json.load(pokedex_file)
