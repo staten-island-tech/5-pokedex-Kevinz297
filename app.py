@@ -1,34 +1,90 @@
 
 ## Open the JSON file of pokemon data
 ## create variable "data" that represents the enitre pokedex list
-import json
+""" import json
+pokedex_file = open("./pokedex.json", encoding="utf-8")
+data = json.load(pokedex_file)
+pokedex_file.close()
+search_term = input("Search for a Pokémon by name (e.g., 'Char'): ").lower()
+matched_pokemon = []
+for pokemon in data:
+   if search_term in pokemon['name']['english'].lower():
+       matched_pokemon.append(pokemon['name']['english'])
+if len(matched_pokemon) == 0:
+   print("No Pokémon found matching that name.\n")
+else:
+   print("Matches found:")
+   for index, name in enumerate(matched_pokemon):
+       print(str(index + 1) + ". " + name)
+   print("\n")
 
-pokedex = open("./pokedex.json", encoding="utf-8")
-data = json.load(pokedex)
-type = open("./type.json", encoding="utf-8")
 
-""" def languages (pokedex_data):
-    lang = input("Choose language (en, fr, zh, ja): ").lower()
-    for pokemon in pokedex_data:
-        if lang == 'fr':
-            print(pokemon['name']['french'])
-        elif lang == 'zh':
-            print(pokemon['name']['chinese'])
-        elif lang == 'ja':
-            print(pokemon['name']['japanese'])
-        else:
-            print(pokemon['name']['english']) """
+
+
+def languages(pokedex_data):
+   lang = input("Choose language (en, fr, zh, ja): ").lower()
+   print("\n--- Pokémon List ---")
+   for pokemon in pokedex_data:
+       if lang == 'fr':
+           print(pokemon['name']['french'])
+       elif lang == 'zh':
+           print(pokemon['name']['chinese'])
+       elif lang == 'ja':
+           print(pokemon['name']['japanese'])
+       else:
+           print(pokemon['name']['english'])
+   print("\n")
+
 
 def pokemon_type(pokedex_data):
-        type = input("Choose type (Grass, Fire, Water, Bug, Normal, Poison, Flying): ").capitalize()
-        found = False
-        for pokemon in pokedex_data:
-            if type in pokemon['type']:
-                print(pokemon['name']['english'])
-                found = True
-        if not found:
-            print("No Pokémon found of type:", type)
-            return
+   search_type = input("Choose type (Grass, Fire, Water, Bug, Normal, etc.): ").capitalize()
+  
+   type_list = []
+   for pokemon in pokedex_data:
+       if search_type in pokemon['type']:
+           type_list.append(pokemon)
+  
+   if len(type_list) == 0:
+       print("No Pokémon found of type:", search_type)
+   else:
+       print("\n---", search_type, "type Pokémon ---")
+       for pokemon in type_list:
+           print(pokemon['name']['english'])
+   return type_list  """
+
+import json 
+def get_moves_by_type():
+   pokedex_file = open("./pokedex.json", encoding="utf-8")
+   pokedex_data = json.load(pokedex_file)
+   pokedex_file.close()
+   moves_file = open("./moves.json", encoding="utf-8")
+   moves_data = json.load(moves_file)
+   moves_file.close()
+   target_pokemon = input("Enter a Pokémon name to see compatible moves based on its type: ").lower()
+   pokemon_types = []
+   for pokemon in pokedex_data:
+       if pokemon['name']['english'].lower() == target_pokemon:
+           pokemon_types = pokemon['type']
+   if len(pokemon_types) == 0:
+       print("No Pokémon found named:", target_pokemon)
+   else:
+       print(target_pokemon.capitalize(), "is type:", pokemon_types)
+       print("Moves it can learn:")
+       found_moves = []
+       for move in moves_data:
+           if move['type'] in pokemon_types:
+               found_moves.append(move['name'])
+              
+       if len(found_moves) == 0:
+           print("No matching moves found in the database.")
+       else:
+           for index, move_name in enumerate(found_moves):
+               print(str(index + 1) + " - " + move_name)
+
+
+get_moves_by_type()
+
+
         
 
 # Create a function that will take the data from the JSON file and you will iterate through the list of pokemon and print each pokemons name.
