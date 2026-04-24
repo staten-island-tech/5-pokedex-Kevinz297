@@ -1,7 +1,7 @@
 
 ## Open the JSON file of pokemon data
 ## create variable "data" that represents the enitre pokedex list
-""" import json
+import json
 pokedex_file = open("./pokedex.json", encoding="utf-8")
 data = json.load(pokedex_file)
 pokedex_file.close()
@@ -16,26 +16,27 @@ else:
    print("Matches found:")
    for index, name in enumerate(matched_pokemon):
        print(str(index + 1) + ". " + name)
-   print("\n")
+   print("\n") 
+"""
 
 
 
-
+"""
 def languages(pokedex_data):
-   lang = input("Choose language (en, fr, zh, ja): ").lower()
+   lang = input("Choose language (english, french, chinese, japanese): ").lower()
    print("\n--- Pokémon List ---")
    for pokemon in pokedex_data:
-       if lang == 'fr':
+       if lang == 'french':
            print(pokemon['name']['french'])
-       elif lang == 'zh':
+       elif lang == 'chinese':
            print(pokemon['name']['chinese'])
-       elif lang == 'ja':
+       elif lang == 'japanese':
            print(pokemon['name']['japanese'])
        else:
            print(pokemon['name']['english'])
    print("\n")
-
-
+"""
+"""
 def pokemon_type(pokedex_data):
    search_type = input("Choose type (Grass, Fire, Water, Bug, Normal, etc.): ").capitalize()
   
@@ -50,10 +51,9 @@ def pokemon_type(pokedex_data):
        print("\n---", search_type, "type Pokémon ---")
        for pokemon in type_list:
            print(pokemon['name']['english'])
-   return type_list  """
+   return type_list  
 
-import json 
-def get_moves_by_type():
+def pokemoves():
    pokedex_file = open("./pokedex.json", encoding="utf-8")
    pokedex_data = json.load(pokedex_file)
    pokedex_file.close()
@@ -81,8 +81,7 @@ def get_moves_by_type():
            for index, move_name in enumerate(found_moves):
                print(str(index + 1) + " - " + move_name)
 
-
-get_moves_by_type()
+pokemoves()
 
 
         
@@ -97,7 +96,7 @@ get_moves_by_type()
 
 #Based on user input, show all moves that pokemon  could learn based on type. For example, if Charizard is fire/fyling, show all fire and flying moves.
 
-""" sushi_orders = [
+"""  sushi_orders = [
     {"name": "California Roll", "price": 8},
     {"name": "Spicy Tuna Roll", "price": 10},
     {"name": "Salmon Nigiri", "price": 6},
@@ -108,9 +107,9 @@ get_moves_by_type()
     {"name": "Edamame", "price": 5},
     {"name": "Salmon Nigiri", "price": 6},
     {"name": "California Roll", "price": 8}
-]
+] """
 
-def receipt(orders):
+""" def receipt(orders):
     receipt= {}
     for order in orders:
         if order["name"] in receipt:
@@ -124,13 +123,9 @@ def receipt(orders):
         price = value["price"] * value["quantity"]
         print(order, value["quantity"], price)
 
-print(receipt(sushi_orders)) """
-
-
-
-
-""" """ """ 
-wards = {
+print(receipt(sushi_orders))
+ """
+""" wards = {
     "Cardiology":  ["Alice", "Bob", "Carol"],
     "Neurology":   ["Diana", "Eve"],
     "Orthopedics": ["Frank", "Grace", "Hank"],
@@ -144,4 +139,4 @@ for dept, docs in wards.items():
         if doc not in staff:
             staff[doc] = []
             staff[doc].append(dept)
-    print(staff['Bob']) """
+    print(staff['Bob']) """ 
