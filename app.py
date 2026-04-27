@@ -73,15 +73,16 @@ def pokemoves():
        found_moves = []
        for move in moves_data:
            if move['type'] in pokemon_types:
-               found_moves.append(move['name'])
+               found_moves.append(move['name']['english']['move'])
               
        if len(found_moves) == 0:
            print("No matching moves found in the database.")
        else:
            for index, move_name in enumerate(found_moves):
                print(str(index + 1) + " - " + move_name)
+pokemoves() 
 
-pokemoves()
+
 
 
         
